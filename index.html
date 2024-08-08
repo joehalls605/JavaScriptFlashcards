@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flashcards</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
@@ -12,17 +12,23 @@
         <div class="text-1xl">Let's test your knowledge.</div>
     </div>   
     <div id="gameContainer">
-        
-        <label for="dropdown">Choose an option</label>
-        <select id="dropdown">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-        </select>
+        <div id="menu">
+            <label for="dropdown">Choose an option:</label>
+            <select id="dropdown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+    
+            <p id="selectedOption">Selected: None</p>
+    
+            <button id="startGameBtn">Begin the game</button>
+        </div>
+        <div id="game">
 
-        <p id="selectedOption">Selected: None</p>
-        
+        </div>
     </div>   
-    <script src="./script.js"></script>
+
+    <script src="script.js"></script> 
 </body>
 </html>
