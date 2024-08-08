@@ -26,14 +26,21 @@ dropdown.addEventListener("change", function() {
     selectedOption.textContent = "Selected: " + selectedText;
 });
 
-// Initialize the game
+// Initialise the game
 function startGame() {
     showCard();
 }
 
 startGameBtn.addEventListener("click", startGame);
 
+// Create and append the Next button
+const nxtBtn = document.getElementById("nxtBtn");
+nxtBtn.addEventListener("click", function(){
+    currentQuestionIndex ++; // JOE FIX THIS.
+});
+
 function showCard() {
+    // RANDOMISE QUESTION
     const menuElement = document.getElementById("menu");
     menuElement.remove();
 
@@ -62,19 +69,6 @@ function showCard() {
         });
         flashCard.append(revealBtn);
 
-        // Create and append the Next button
-        const nxtBtn = document.createElement("button");
-        nxtBtn.textContent = "Next";
-        nxtBtn.addEventListener("click", function() {
-            currentQuestionIndex++;
-            gameElement.innerHTML = ''; // Clear previous content
-            if (currentQuestionIndex < topicData.length) {
-                showCard(); // Show the next card
-            } else {
-                gameElement.innerHTML = '<h3>End of questions!</h3>'; // End of questions
-            }
-        });
-        flashCard.append(nxtBtn);
         
         gameElement.append(flashCard);
     } else {
